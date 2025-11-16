@@ -1,7 +1,11 @@
+"use client";
+import { useState } from "react";
+
 export default function PlanetCards() {
 
     type PlanetCard = {
         name: string;
+        image: string;
         description: string;
         typeImage: string;
         type: string;
@@ -17,6 +21,7 @@ export default function PlanetCards() {
     let planetCards: PlanetCard[] = [
         {
             name: "Sylva",
+            image: "/planets/Sylva.png",
             description: "Average Atmosphere, Temperate, Pleasant",
             typeImage: "/icons/Icon_Sylva.png",
             type: "Terran",
@@ -30,6 +35,7 @@ export default function PlanetCards() {
         },
         {
             name: "Desolo",
+            image: "/planets/Desolo.png",
             description: "No Atmosphere, Bare Rock, Pockmarked",
             typeImage: "/icons/Icon_Desolo.png",
             type: "Terran Moon",
@@ -42,6 +48,7 @@ export default function PlanetCards() {
         },
         {
             name: "Calidor",
+            image: "/planets/Calidor.png",
             description: "Average Atmosphere, Sun-Blasted, Dry",
             typeImage: "/icons/Icon_Calidor.png",
             type: "Arid",
@@ -55,6 +62,7 @@ export default function PlanetCards() {
         },
         {
             name: "Vesania",
+            image: "/planets/Vesania.png",
             description: "Thick Atmosphere, Lush, Unusual Landscape",
             typeImage: "/icons/Icon_Vesania.png",
             type: "Exotic",
@@ -68,6 +76,7 @@ export default function PlanetCards() {
         },
         {
             name: "Novus",
+            image: "/planets/Novus.png",
             description: "Thin Atmosphere, Forested, Cratered",
             typeImage: "/icons/Icon_Novus.png",
             type: "Exotic Moon",
@@ -81,6 +90,7 @@ export default function PlanetCards() {
         },
         {
             name: "Glacio",
+            image: "/planets/Glacio.png",
             description: "Thin Atmosphere, Windswept, Icy Mountains",
             typeImage: "/icons/Icon_Glacio.png",
             type: "Tundra",
@@ -94,6 +104,7 @@ export default function PlanetCards() {
         },
         {
             name: "Atrox",
+            image: "/planets/Atrox.png",
             description: "Choked Atmosphere, Aggressive Flora, Treacherous Terrain",
             typeImage: "/icons/Icon_Atrox.png",
             type: "Radiated",
@@ -106,18 +117,26 @@ export default function PlanetCards() {
         }
     ];
 
+    const [selectedPlanetIndex, setSelectedPlanetIndex] = useState<number | null>(null);
+
+    const handlePlanetCardClick = (index: number) => {
+        setSelectedPlanetIndex(prev => prev === index ? null : index);
+    }
+
     return (
         <div className="absolute top-0 left-0 flex flex-col justify-center items-center h-full w-screen overflow-hidden pointer-events-none">
             { planetCards.map((planet, index) => (
-                <div key={index} className="absolute w-60 h-90 rounded-2xl cursor-pointer bg-center bg-cover overflow-hidden group pointer-events-auto text-center origin-bottom-left hover:-translate-y-5 hover:scale-105 transition-transform duration-500" 
+                <div key={index} onClick={() => handlePlanetCardClick(index)} 
+                className={`absolute w-65 h-90 rounded-2xl cursor-pointer bg-center bg-cover overflow-hidden group pointer-events-auto text-center origin-bottom-left -translate-x-[75%] transition-all duration-500 
+                    ${selectedPlanetIndex === index ? "z-20 scale-125 translate-y-0 rotate-0 " : "origin-bottom-left hover:-translate-y-5 hover:scale-105"}`}
                     style={{ 
-                        backgroundImage: `url('/planets/Sylva.png')`, 
-                        rotate: `${-15 + index * 5}deg`,
-                        left: `calc(50% + ${index * 20 - (planetCards.length - 1) * 30}px)`,
+                        backgroundImage: `url(${planet.image})`, 
+                        rotate: selectedPlanetIndex === index ? "0deg" : `${-15 + index * 5}deg`,
+                        left: selectedPlanetIndex === index ? "50%" : `calc(50% + ${index * 20}px)`,
                     }}
                 >
-                    <div className="bg-black absolute inset-0 opacity-80 group-hover:opacity-50 transition-opacity duration-500"/>
-                    <div className="absolute top-0 bg-sky-600/70 w-full p-1 text-xl text-center px-[5%] h-10 flex flex-row justify-between items-center gap-3 flex-wrap overflow-hidden group-hover:bg-sky-600 transition-colors duration-500">
+                    <div className={`bg-black absolute inset-0  transition-opacity duration-500 ${selectedPlanetIndex === index ? "opacity-60" : "opacity-80 group-hover:opacity-60"}`}/>
+                    <div className={`absolute top-0 w-full p-1 text-xl text-center px-[5%] h-10 flex flex-row justify-between items-center gap-3 flex-wrap overflow-hidden transition-colors duration-500 ${selectedPlanetIndex === index ? "bg-sky-600" : "bg-sky-600/70 group-hover:bg-sky-600"}`}>
                         <div className="flex flex-row gap-2">
                             <img src={planet.typeImage}/>
                             {planet.name}
