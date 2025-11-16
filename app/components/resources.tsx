@@ -74,15 +74,75 @@ export default function Resources() {
             name: "Hematite",
             icon: "/icons/Icon_Hematite.png",
             planetIcons: ["/icons/Icon_Novus.png", "/icons/Icon_Glacio.png"]
-        },{
+        },
+        {
             name: "Titanite",
             icon: "/icons/Icon_Sphalerite.png",
             planetIcons: ["/icons/Icon_Vesania.png", "/icons/Icon_Glacio.png"]
         }
     ];
 
+    type GasResource = {
+        name: string;
+        icon: string;
+        planets: {planetIcon: string, ppu: string}[];
+    }
+
+    let gasses: GasResource[] = [
+        {
+            name: "Hydrogen",
+            icon: "/icons/Icon_Hydrogen.png",
+            planets: [
+                {planetIcon: "/icons/Icon_Sylva.png", ppu: "75"},
+                {planetIcon: "/icons/Icon_Calidor.png", ppu: "50"},
+                {planetIcon: "/icons/Icon_Vesania.png", ppu: "25"},
+                {planetIcon: "/icons/Icon_Novus.png", ppu: "25"}
+            ]
+        },
+        {
+            name: "Argon",
+            icon: "/icons/Icon_Argon.png",
+            planets: [
+                {planetIcon: "/icons/Icon_Vesania.png", ppu: "50"},
+                {planetIcon: "/icons/Icon_Glacio.png", ppu: "100"}
+            ]
+        },
+        {
+            name: "Methane",
+            icon: "/icons/Icon_Methane.png",
+            planets: [
+                {planetIcon: "/icons/Icon_Novus.png", ppu: "75"},
+                {planetIcon: "/icons/Icon_Atrox.png", ppu: "100"}
+            ]
+        },
+        {
+            name: "Nitrogen",
+            icon: "/icons/Icon_Nitrogen.png",
+            planets: [
+                {planetIcon: "/icons/Icon_Sylva.png", ppu: "100"},
+                {planetIcon: "/icons/Icon_Vesania.png", ppu: "75"},
+                {planetIcon: "/icons/Icon_Atrox.png", ppu: "50"}
+            ]
+        },
+        {
+            name: "Sulfur",
+            icon: "/icons/Icon_Sulfur.png",
+            planets: [
+                {planetIcon: "/icons/Icon_Calidor.png", ppu: "100"},
+                {planetIcon: "/icons/Icon_Atrox.png", ppu: "75"}
+            ]
+        },
+        {
+            name: "Helium",
+            icon: "/icons/Icon_Helium.png",
+            planets: [
+                {planetIcon: "/icons/Icon_Atrox.png", ppu: "25"}
+            ]
+        }
+    ];
+
     const [showResourceMenu, setShowResourceMenu] = useState(true);
-    const [showPage, setShowPage] = useState("Drill");
+    const [showPage, setShowPage] = useState("Gas");
 
     return (
         <div>
@@ -103,7 +163,7 @@ export default function Resources() {
                                     <h1 className="text-4xl mb-5">Natural Resources</h1>
                                     <div className="flex flex-row flex-wrap gap-5">
                                         {naturalResources.map((resource, index) => (
-                                            <div key={index} className="flex flex-row gap-3 bg-gray-900 rounded-lg justify-center items-center p-3 cursor-pointer hover:bg-sky-700 transition-colors duration-500">
+                                            <div key={index} className="flex flex-row gap-3 bg-gray-800 rounded-lg justify-center items-center p-3 cursor-pointer hover:bg-sky-700 transition-colors duration-500">
                                                 <img src={resource.icon} className="w-8 h-8"/>
                                                 <p className="text-center text-4xl">{resource.name}</p>
                                                 {resource.planetIcons ? 
@@ -126,6 +186,23 @@ export default function Resources() {
                             {showPage === "Gas" && (
                                 <div>
                                     <h1 className="text-4xl mb-5">Atmospheric Condenser</h1>
+                                    <div className="flex flex-row flex-wrap gap-5">
+                                        {gasses.map((gas, index) => (
+                                            <div key={index} className="flex flex-col bg-gray-900 rounded-lg justify-start items-center cursor-pointer group h-fit">
+                                                <div className="flex flex-row gap-3 mb-3 items-center rounded-lg bg-gray-800 p-3 group-hover:bg-sky-700 transition-colors duration-500">
+                                                    <img src={gas.icon} className="w-8 h-8"/>
+                                                    <p className="text-center text-4xl">{gas.name}</p>
+                                                </div>
+                                                {gas.planets.map((planet, pIndex) => (
+                                                    <div key={pIndex} className="flex flex-row gap-3 items-center justify-center mb-3">
+                                                        <img src={planet.planetIcon} className="w-6 h-6"/>
+                                                        <p className="text-2xl">{planet.ppu} PPU</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ))
+                                        }
+                                    </div>
                                 </div>
                             )}
                             {showPage === "Smelt" && (
