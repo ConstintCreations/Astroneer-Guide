@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Stars from "./components/stars";
+import PlanetCards from "./components/planetcards";
 
 export default function Home() {
   const [animateOut, setAnimateOut] = useState(false);
@@ -12,6 +13,7 @@ export default function Home() {
       </div>
       <div className="text-6xl flex flex-col justify-center items-center h-[100%] w-screen">
         <Stars />
+        <PlanetCards />
       </div>
     </div>
   )

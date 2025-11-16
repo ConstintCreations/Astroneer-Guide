@@ -74,7 +74,7 @@ export default function Stars() {
     }
 
     return (
-        <div ref={containerRef} className="relative top-0 left-0 flex flex-col justify-center items-center h-full w-screen overflow-none">
+        <div ref={containerRef} className="relative top-0 left-0 flex flex-col justify-center items-center h-full w-screen overflow-hidden">
 
             { lines.map((line) => (
                 <div key={line.id} className="absolute bg-gray-200 h-1 rounded-full" style={{
@@ -89,7 +89,7 @@ export default function Stars() {
             }
 
             {stars.map((star) => (
-                <div key={star.id} onMouseEnter={() => handleStarHover(star.id)} onMouseLeave={() => handleStarLeave(star.id)} className={`${star.active ? "bg-white duration-100" : `${brightnessLevels[star.brightness as 500 | 600 | 700]} duration-2000`} absolute rounded-full w-1.5 h-1.5 transition-colors ease-in-out`} style={{ top: `${star.y}%`, left: `${star.x}%`, transform: `scale(${star.size}) translate(-50%, -50%)`}} />
+                <div key={star.id} onMouseEnter={() => handleStarHover(star.id)} onMouseLeave={() => handleStarLeave(star.id)} className={`${star.active ? "bg-white duration-0" : `${brightnessLevels[star.brightness as 500 | 600 | 700]} duration-2000`} absolute rounded-full w-1.5 h-1.5 transition-colors ease-in-out`} style={{ top: `${star.y}%`, left: `${star.x}%`, transform: `scale(${star.size}) translate(-50%, -50%)`}} />
             ))
             }
             
