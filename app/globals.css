@@ -41,3 +41,12 @@ body {
     bottom: 120%;
   }
 }
+
+@keyframes fadeStarLineOut {
+  0%, 28% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
