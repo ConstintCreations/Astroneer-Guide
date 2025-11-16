@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Stars from "./components/stars";
 import PlanetCards from "./components/planetcards";
+import Resources from "./components/resources";
 
 export default function Home() {
   const [animateOut, setAnimateOut] = useState(false);
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="text-6xl flex flex-col justify-center items-center h-[100%] w-screen">
         <Stars />
         <PlanetCards />
+        <Resources />
       </div>
     </div>
   )
