@@ -12,73 +12,73 @@ export default function Resources() {
     let naturalResources: NaturalResource[] = [
         {
             name: "Soil",
-            icon: "/icons/Icon_Soil.png"
+            icon: "./icons/Icon_Soil.png"
         },
         {
             name: "Organic",
-            icon: "/icons/Icon_Organic.png"
+            icon: "./icons/Icon_Organic.png"
         },
         {
             name: "Compound",
-            icon: "/icons/Icon_Compound.png"
+            icon: "./icons/Icon_Compound.png"
         },
         {
             name: "Resin",
-            icon: "/icons/Icon_Resin.png"
+            icon: "./icons/Icon_Resin.png"
         },
         {
             name: "Clay",
-            icon: "/icons/Icon_Clay.png"
+            icon: "./icons/Icon_Clay.png"
         },
         {
             name: "Quartz",
-            icon: "/icons/Icon_Quartz.png"
+            icon: "./icons/Icon_Quartz.png"
         },
         {
             name: "Ammonium",
-            icon: "/icons/Icon_Ammonium.png"
+            icon: "./icons/Icon_Ammonium.png"
         },
         {
             name: "Graphite",
-            icon: "/icons/Icon_Graphite.png"
+            icon: "./icons/Icon_Graphite.png"
         },
         {
             name: "Laterite",
-            icon: "/icons/Icon_Laterite.png"
+            icon: "./icons/Icon_Laterite.png"
         },
         {
             name: "Astronium",
-            icon: "/icons/Icon_Astronium.png"
+            icon: "./icons/Icon_Astronium.png"
         },
         {
             name: "Sphalerite",
-            icon: "/icons/Icon_Sphalerite.png",
-            planetIcons: ["/icons/Icon_Sylva.png", "/icons/Icon_Desolo.png"]
+            icon: "./icons/Icon_Sphalerite.png",
+            planetIcons: ["./icons/Icon_Sylva.png", "./icons/Icon_Desolo.png"]
         },
         {
             name: "Wolframite",
-            icon: "/icons/Icon_Wolframite.png",
-            planetIcons: ["/icons/Icon_Desolo.png", "/icons/Icon_Calidor.png"]
+            icon: "./icons/Icon_Wolframite.png",
+            planetIcons: ["./icons/Icon_Desolo.png", "./icons/Icon_Calidor.png"]
         },
         {
             name: "Malachite",
-            icon: "/icons/Icon_Malachite.png",
-            planetIcons: ["/icons/Icon_Sylva.png", "/icons/Icon_Calidor.png"]
+            icon: "./icons/Icon_Malachite.png",
+            planetIcons: ["./icons/Icon_Sylva.png", "./icons/Icon_Calidor.png"]
         },
         {
             name: "Lithium",
-            icon: "/icons/Icon_Lithium.png",
-            planetIcons: ["/icons/Icon_Vesania.png", "/icons/Icon_Novus.png"]
+            icon: "./icons/Icon_Lithium.png",
+            planetIcons: ["./icons/Icon_Vesania.png", "./icons/Icon_Novus.png"]
         },
         {
             name: "Hematite",
-            icon: "/icons/Icon_Hematite.png",
-            planetIcons: ["/icons/Icon_Novus.png", "/icons/Icon_Glacio.png"]
+            icon: "./icons/Icon_Hematite.png",
+            planetIcons: ["./icons/Icon_Novus.png", "./icons/Icon_Glacio.png"]
         },
         {
             name: "Titanite",
-            icon: "/icons/Icon_Sphalerite.png",
-            planetIcons: ["/icons/Icon_Vesania.png", "/icons/Icon_Glacio.png"]
+            icon: "./icons/Icon_Sphalerite.png",
+            planetIcons: ["./icons/Icon_Vesania.png", "./icons/Icon_Glacio.png"]
         }
     ];
 
@@ -91,52 +91,52 @@ export default function Resources() {
     let gasses: GasResource[] = [
         {
             name: "Hydrogen",
-            icon: "/icons/Icon_Hydrogen.png",
+            icon: "./icons/Icon_Hydrogen.png",
             planets: [
-                {planetIcon: "/icons/Icon_Sylva.png", ppu: "75"},
-                {planetIcon: "/icons/Icon_Calidor.png", ppu: "50"},
-                {planetIcon: "/icons/Icon_Vesania.png", ppu: "100"},
-                {planetIcon: "/icons/Icon_Novus.png", ppu: "25"}
+                {planetIcon: "./icons/Icon_Sylva.png", ppu: "75"},
+                {planetIcon: "./icons/Icon_Calidor.png", ppu: "50"},
+                {planetIcon: "./icons/Icon_Vesania.png", ppu: "100"},
+                {planetIcon: "./icons/Icon_Novus.png", ppu: "25"}
             ]
         },
         {
             name: "Argon",
-            icon: "/icons/Icon_Argon.png",
+            icon: "./icons/Icon_Argon.png",
             planets: [
-                {planetIcon: "/icons/Icon_Vesania.png", ppu: "50"},
-                {planetIcon: "/icons/Icon_Glacio.png", ppu: "100"}
+                {planetIcon: "./icons/Icon_Vesania.png", ppu: "50"},
+                {planetIcon: "./icons/Icon_Glacio.png", ppu: "100"}
             ]
         },
         {
             name: "Methane",
-            icon: "/icons/Icon_Methane.png",
+            icon: "./icons/Icon_Methane.png",
             planets: [
-                {planetIcon: "/icons/Icon_Novus.png", ppu: "75"},
-                {planetIcon: "/icons/Icon_Atrox.png", ppu: "100"}
+                {planetIcon: "./icons/Icon_Novus.png", ppu: "75"},
+                {planetIcon: "./icons/Icon_Atrox.png", ppu: "100"}
             ]
         },
         {
             name: "Nitrogen",
-            icon: "/icons/Icon_Nitrogen.png",
+            icon: "./icons/Icon_Nitrogen.png",
             planets: [
-                {planetIcon: "/icons/Icon_Sylva.png", ppu: "100"},
-                {planetIcon: "/icons/Icon_Vesania.png", ppu: "75"},
-                {planetIcon: "/icons/Icon_Atrox.png", ppu: "50"}
+                {planetIcon: "./icons/Icon_Sylva.png", ppu: "100"},
+                {planetIcon: "./icons/Icon_Vesania.png", ppu: "75"},
+                {planetIcon: "./icons/Icon_Atrox.png", ppu: "50"}
             ]
         },
         {
             name: "Sulfur",
-            icon: "/icons/Icon_Sulfur.png",
+            icon: "./icons/Icon_Sulfur.png",
             planets: [
-                {planetIcon: "/icons/Icon_Calidor.png", ppu: "100"},
-                {planetIcon: "/icons/Icon_Atrox.png", ppu: "75"}
+                {planetIcon: "./icons/Icon_Calidor.png", ppu: "100"},
+                {planetIcon: "./icons/Icon_Atrox.png", ppu: "75"}
             ]
         },
         {
             name: "Helium",
-            icon: "/icons/Icon_Helium.png",
+            icon: "./icons/Icon_Helium.png",
             planets: [
-                {planetIcon: "/icons/Icon_Atrox.png", ppu: "25"}
+                {planetIcon: "./icons/Icon_Atrox.png", ppu: "25"}
             ]
         }
     ];
@@ -151,57 +151,57 @@ export default function Resources() {
     let refinedResources: refinedResource[] = [
         {
             name: "Carbon",
-            icon: "/icons/Icon_Carbon.png",
+            icon: "./icons/Icon_Carbon.png",
             fromName: "Organic",
-            fromIcon: "/icons/Icon_Organic.png"
+            fromIcon: "./icons/Icon_Organic.png"
         },
         {
             name: "Ceramic",
-            icon: "/icons/Icon_Ceramic.png",
+            icon: "./icons/Icon_Ceramic.png",
             fromName: "Clay",
-            fromIcon: "/icons/Icon_Clay.png"
+            fromIcon: "./icons/Icon_Clay.png"
         },
         {
             name: "Glass",
-            icon: "/icons/Icon_Glass.png",
+            icon: "./icons/Icon_Glass.png",
             fromName: "Quartz",
-            fromIcon: "/icons/Icon_Quartz.png"
+            fromIcon: "./icons/Icon_Quartz.png"
         },
         {
             name: "Aluminum",
-            icon: "/icons/Icon_Aluminum.png",
+            icon: "./icons/Icon_Aluminum.png",
             fromName: "Laterite",
-            fromIcon: "/icons/Icon_Laterite.png"
+            fromIcon: "./icons/Icon_Laterite.png"
         },
         {
             name: "Zinc",
-            icon: "/icons/Icon_Zinc.png",
+            icon: "./icons/Icon_Zinc.png",
             fromName: "Sphalerite",
-            fromIcon: "/icons/Icon_Sphalerite.png"
+            fromIcon: "./icons/Icon_Sphalerite.png"
         },
         {
             name: "Copper",
-            icon: "/icons/Icon_Copper.png",
+            icon: "./icons/Icon_Copper.png",
             fromName: "Malachite",
-            fromIcon: "/icons/Icon_Malachite.png"
+            fromIcon: "./icons/Icon_Malachite.png"
         },
         {
             name: "Tungsten",
-            icon: "/icons/Icon_Tungsten.png",
+            icon: "./icons/Icon_Tungsten.png",
             fromName: "Wolframite",
-            fromIcon: "/icons/Icon_Wolframite.png"
+            fromIcon: "./icons/Icon_Wolframite.png"
         },
         {
             name: "Iron",
-            icon: "/icons/Icon_Iron.png",
+            icon: "./icons/Icon_Iron.png",
             fromName: "Hematite",
-            fromIcon: "/icons/Icon_Hematite.png"
+            fromIcon: "./icons/Icon_Hematite.png"
         },
         {
             name: "Titanium",
-            icon: "/icons/Icon_Titanium.png",
+            icon: "./icons/Icon_Titanium.png",
             fromName: "Titanite",
-            fromIcon: "/icons/Icon_Titanite.png"
+            fromIcon: "./icons/Icon_Titanite.png"
         },
     ]
 
@@ -214,104 +214,104 @@ export default function Resources() {
     let labResources: CompositeResources[] = [
         {
             name: "Rubber",
-            icon: "/icons/Icon_Rubber.png",
+            icon: "./icons/Icon_Rubber.png",
             resources: [
-                {name: "Organic", icon: "/icons/Icon_Organic.png", page: "Drill"},
-                {name: "Resin", icon: "/icons/Icon_Resin.png", page: "Drill"},
+                {name: "Organic", icon: "./icons/Icon_Organic.png", page: "Drill"},
+                {name: "Resin", icon: "./icons/Icon_Resin.png", page: "Drill"},
             ]
         },
         {
             name: "Plastic",
-            icon: "/icons/Icon_Plastic.png",
+            icon: "./icons/Icon_Plastic.png",
             resources: [
-                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"},
-                {name: "Compound", icon: "/icons/Icon_Compound.png", page: "Drill"}
+                {name: "Carbon", icon: "./icons/Icon_Carbon.png", page: "Smelt"},
+                {name: "Compound", icon: "./icons/Icon_Compound.png", page: "Drill"}
             ]
         },
         {
             name: "Aluminum Alloy",
-            icon: "/icons/Icon_Aluminum_Alloy.png",
+            icon: "./icons/Icon_Aluminum_Alloy.png",
             resources: [
-                {name: "Aluminum", icon: "/icons/Icon_Aluminum.png", page: "Smelt"},
-                {name: "Copper", icon: "/icons/Icon_Copper.png", page: "Smelt"}
+                {name: "Aluminum", icon: "./icons/Icon_Aluminum.png", page: "Smelt"},
+                {name: "Copper", icon: "./icons/Icon_Copper.png", page: "Smelt"}
             ]
         },
         {
             name: "Tungsten Carbide",
-            icon: "/icons/Icon_Tungsten_Carbide.png",
+            icon: "./icons/Icon_Tungsten_Carbide.png",
             resources: [
-                {name: "Tungsten", icon: "/icons/Icon_Tungsten.png", page: "Smelt"},
-                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"}
+                {name: "Tungsten", icon: "./icons/Icon_Tungsten.png", page: "Smelt"},
+                {name: "Carbon", icon: "./icons/Icon_Carbon.png", page: "Smelt"}
             ]
         },
         {
             name: "Graphene",
-            icon: "/icons/Icon_Graphene.png",
+            icon: "./icons/Icon_Graphene.png",
             resources: [
-                {name: "Graphite", icon: "/icons/Icon_Graphite.png", page: "Drill"},
-                {name: "Hydrazine", icon: "/icons/Icon_Hydrazine.png", page: "Lab"}
+                {name: "Graphite", icon: "./icons/Icon_Graphite.png", page: "Drill"},
+                {name: "Hydrazine", icon: "./icons/Icon_Hydrazine.png", page: "Lab"}
             ]
         },
         {
             name: "Diamond",
-            icon: "/icons/Icon_Diamond.png",
+            icon: "./icons/Icon_Diamond.png",
             resources: [
-                {name: "Graphene", icon: "/icons/Icon_Graphene.png", page: "Lab"},
-                {name: "Graphene", icon: "/icons/Icon_Graphene.png", page: "Lab"}
+                {name: "Graphene", icon: "./icons/Icon_Graphene.png", page: "Lab"},
+                {name: "Graphene", icon: "./icons/Icon_Graphene.png", page: "Lab"}
             ]
         },
         {
             name: "Hydrazine",
-            icon: "/icons/Icon_Hydrazine.png",
+            icon: "./icons/Icon_Hydrazine.png",
             resources: [
-                {name: "Ammonium", icon: "/icons/Icon_Ammonium.png", page: "Drill"},
-                {name: "Ammonium", icon: "/icons/Icon_Ammonium.png", page: "Drill"},
-                {name: "Hydrogen", icon: "/icons/Icon_Hydrogen.png", page: "Gas"}
+                {name: "Ammonium", icon: "./icons/Icon_Ammonium.png", page: "Drill"},
+                {name: "Ammonium", icon: "./icons/Icon_Ammonium.png", page: "Drill"},
+                {name: "Hydrogen", icon: "./icons/Icon_Hydrogen.png", page: "Gas"}
             ]
         },
         {
             name: "Silicone",
-            icon: "/icons/Icon_Silicone.png",
+            icon: "./icons/Icon_Silicone.png",
             resources: [
-                {name: "Resin", icon: "/icons/Icon_Resin.png", page: "Drill"},
-                {name: "Quartz", icon: "/icons/Icon_Quartz.png", page: "Drill"},
-                {name: "Methane", icon: "/icons/Icon_Methane.png", page: "Gas"}
+                {name: "Resin", icon: "./icons/Icon_Resin.png", page: "Drill"},
+                {name: "Quartz", icon: "./icons/Icon_Quartz.png", page: "Drill"},
+                {name: "Methane", icon: "./icons/Icon_Methane.png", page: "Gas"}
             ]
         },
         {
             name: "Explosive Powder",
-            icon: "/icons/Icon_Explosive_Powder.png",
+            icon: "./icons/Icon_Explosive_Powder.png",
             resources: [
-                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"},
-                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"},
-                {name: "Sulfur", icon: "/icons/Icon_Sulfur.png", page: "Gas"}
+                {name: "Carbon", icon: "./icons/Icon_Carbon.png", page: "Smelt"},
+                {name: "Carbon", icon: "./icons/Icon_Carbon.png", page: "Smelt"},
+                {name: "Sulfur", icon: "./icons/Icon_Sulfur.png", page: "Gas"}
             ]
         },
         {
             name: "Steel",
-            icon: "/icons/Icon_Steel.png",
+            icon: "./icons/Icon_Steel.png",
             resources: [
-                {name: "Iron", icon: "/icons/Icon_Iron.png", page: "Smelt"},
-                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"},
-                {name: "Argon", icon: "/icons/Icon_Argon.png", page: "Gas"}
+                {name: "Iron", icon: "./icons/Icon_Iron.png", page: "Smelt"},
+                {name: "Carbon", icon: "./icons/Icon_Carbon.png", page: "Smelt"},
+                {name: "Argon", icon: "./icons/Icon_Argon.png", page: "Gas"}
             ]
         },
         {
             name: "Titanium Alloy",
-            icon: "/icons/Icon_Titanium_Alloy.png",
+            icon: "./icons/Icon_Titanium_Alloy.png",
             resources: [
-                {name: "Titanium", icon: "/icons/Icon_Titanium.png", page: "Smelt"},
-                {name: "Graphene", icon: "/icons/Icon_Graphene.png", page: "Lab"},
-                {name: "Nitrogen", icon: "/icons/Icon_Nitrogen.png", page: "Gas"}
+                {name: "Titanium", icon: "./icons/Icon_Titanium.png", page: "Smelt"},
+                {name: "Graphene", icon: "./icons/Icon_Graphene.png", page: "Lab"},
+                {name: "Nitrogen", icon: "./icons/Icon_Nitrogen.png", page: "Gas"}
             ]
         },
         {
             name: "Nanocarbon Alloy",
-            icon: "/icons/Icon_Nanocarbon_Alloy.png",
+            icon: "./icons/Icon_Nanocarbon_Alloy.png",
             resources: [
-                {name: "Titanium Alloy", icon: "/icons/Icon_Titanium_Alloy.png", page: "Lab"},
-                {name: "Steel", icon: "/icons/Icon_Steel.png", page: "Lab"},
-                {name: "Helium", icon: "/icons/Icon_Helium.png", page: "Gas"}
+                {name: "Titanium Alloy", icon: "./icons/Icon_Titanium_Alloy.png", page: "Lab"},
+                {name: "Steel", icon: "./icons/Icon_Steel.png", page: "Lab"},
+                {name: "Helium", icon: "./icons/Icon_Helium.png", page: "Gas"}
             ]
         }
     ]
@@ -334,10 +334,10 @@ export default function Resources() {
                     <div className="bg-sky-600 w-full p-5 flex h-25 flex-row justify-between pr-10"><div>Resources</div><div className="cursor-pointer" onClick={() => setShowResourceMenu(false)}>X</div></div>
                     <div className="flex flex-row flex-1 overflow-hidden">
                         <div className="bg-gray-900 text-center flex flex-col justify-center items-center p-5 gap-3 overflow-y-auto">
-                            <img src="/icons/Icon_Drill.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Drill")}/>
-                            <img src="/icons/Icon_Atmospheric_Condenser.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Gas")}/>
-                            <img src="/icons/Icon_Smelting_Furnace.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Smelt")}/>
-                            <img src="/icons/Icon_Chemistry_Lab.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Lab")}/>
+                            <img src="./icons/Icon_Drill.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Drill")}/>
+                            <img src="./icons/Icon_Atmospheric_Condenser.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Gas")}/>
+                            <img src="./icons/Icon_Smelting_Furnace.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Smelt")}/>
+                            <img src="./icons/Icon_Chemistry_Lab.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Lab")}/>
                         </div>
                         <div className="flex-1 bg-gray-700 p-10 overflow-y-auto">
                             {showPage === "Drill" && (
@@ -437,7 +437,7 @@ export default function Resources() {
                     </div>
                 </div>
             </div>
-            <img onClick={() => setShowResourceMenu(!showResourceMenu)} src="/icons/Icon_Auto_Extractor.png" className="absolute top-10 left-10 scale-125 cursor-pointer"/>
+            <img onClick={() => setShowResourceMenu(!showResourceMenu)} src="./icons/Icon_Auto_Extractor.png" className="absolute top-10 left-10 scale-125 cursor-pointer"/>
         </div>
     )
 }
