@@ -205,8 +205,119 @@ export default function Resources() {
         },
     ]
 
+    type CompositeResources = {
+        name: string;
+        icon: string;
+        resources: {name: string, icon: string, page:string}[];
+    }
+
+    let labResources: CompositeResources[] = [
+        {
+            name: "Rubber",
+            icon: "/icons/Icon_Rubber.png",
+            resources: [
+                {name: "Organic", icon: "/icons/Icon_Organic.png", page: "Drill"},
+                {name: "Resin", icon: "/icons/Icon_Resin.png", page: "Drill"},
+            ]
+        },
+        {
+            name: "Plastic",
+            icon: "/icons/Icon_Plastic.png",
+            resources: [
+                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"},
+                {name: "Compound", icon: "/icons/Icon_Compound.png", page: "Drill"}
+            ]
+        },
+        {
+            name: "Aluminum Alloy",
+            icon: "/icons/Icon_Aluminum_Alloy.png",
+            resources: [
+                {name: "Aluminum", icon: "/icons/Icon_Aluminum.png", page: "Smelt"},
+                {name: "Copper", icon: "/icons/Icon_Copper.png", page: "Smelt"}
+            ]
+        },
+        {
+            name: "Tungsten Carbide",
+            icon: "/icons/Icon_Tungsten_Carbide.png",
+            resources: [
+                {name: "Tungsten", icon: "/icons/Icon_Tungsten.png", page: "Smelt"},
+                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"}
+            ]
+        },
+        {
+            name: "Graphene",
+            icon: "/icons/Icon_Graphene.png",
+            resources: [
+                {name: "Graphite", icon: "/icons/Icon_Graphite.png", page: "Drill"},
+                {name: "Hydrazine", icon: "/icons/Icon_Hydrazine.png", page: "Lab"}
+            ]
+        },
+        {
+            name: "Diamond",
+            icon: "/icons/Icon_Diamond.png",
+            resources: [
+                {name: "Graphene", icon: "/icons/Icon_Graphene.png", page: "Lab"},
+                {name: "Graphene", icon: "/icons/Icon_Graphene.png", page: "Lab"}
+            ]
+        },
+        {
+            name: "Hydrazine",
+            icon: "/icons/Icon_Hydrazine.png",
+            resources: [
+                {name: "Ammonium", icon: "/icons/Icon_Ammonium.png", page: "Drill"},
+                {name: "Ammonium", icon: "/icons/Icon_Ammonium.png", page: "Drill"},
+                {name: "Hydrogen", icon: "/icons/Icon_Hydrogen.png", page: "Gas"}
+            ]
+        },
+        {
+            name: "Silicone",
+            icon: "/icons/Icon_Silicone.png",
+            resources: [
+                {name: "Resin", icon: "/icons/Icon_Resin.png", page: "Drill"},
+                {name: "Quartz", icon: "/icons/Icon_Quartz.png", page: "Drill"},
+                {name: "Methane", icon: "/icons/Icon_Methane.png", page: "Gas"}
+            ]
+        },
+        {
+            name: "Explosive Powder",
+            icon: "/icons/Icon_Explosive_Powder.png",
+            resources: [
+                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"},
+                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"},
+                {name: "Sulfur", icon: "/icons/Icon_Sulfur.png", page: "Gas"}
+            ]
+        },
+        {
+            name: "Steel",
+            icon: "/icons/Icon_Steel.png",
+            resources: [
+                {name: "Iron", icon: "/icons/Icon_Iron.png", page: "Smelt"},
+                {name: "Carbon", icon: "/icons/Icon_Carbon.png", page: "Smelt"},
+                {name: "Argon", icon: "/icons/Icon_Argon.png", page: "Gas"}
+            ]
+        },
+        {
+            name: "Titanium Alloy",
+            icon: "/icons/Icon_Titanium_Alloy.png",
+            resources: [
+                {name: "Titanium", icon: "/icons/Icon_Titanium.png", page: "Smelt"},
+                {name: "Graphene", icon: "/icons/Icon_Graphene.png", page: "Lab"},
+                {name: "Nitrogen", icon: "/icons/Icon_Nitrogen.png", page: "Gas"}
+            ]
+        },
+        {
+            name: "Nanocarbon Alloy",
+            icon: "/icons/Icon_Nanocarbon_Alloy.png",
+            resources: [
+                {name: "Titanium Alloy", icon: "/icons/Icon_Titanium_Alloy.png", page: "Lab"},
+                {name: "Steel", icon: "/icons/Icon_Steel.png", page: "Lab"},
+                {name: "Helium", icon: "/icons/Icon_Helium.png", page: "Gas"}
+            ]
+        }
+    ]
+
     const [showResourceMenu, setShowResourceMenu] = useState(true);
-    const [showPage, setShowPage] = useState("Smelt");
+    const [showPage, setShowPage] = useState("Lab");
 
     return (
         <div>
@@ -214,7 +325,7 @@ export default function Resources() {
                 <div className="bg-black/70 h-full w-full absolute top-0 left-0 cursor-pointer" onClick={() => setShowResourceMenu(false)}/>
                 <div className="absolute bg-gray-800 w-[80%] h-[80%] rounded-4xl overflow-hidden flex flex-col">
                     <div className="bg-sky-600 w-full p-5 flex h-25 flex-row justify-between pr-10"><div>Resources</div><div className="cursor-pointer" onClick={() => setShowResourceMenu(false)}>X</div></div>
-                    <div className="flex flex-row flex-1">
+                    <div className="flex flex-row flex-1 overflow-hidden">
                         <div className="bg-gray-900 text-center flex flex-col justify-center items-center p-5 gap-3 overflow-y-auto">
                             <img src="/icons/Icon_Drill.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Drill")}/>
                             <img src="/icons/Icon_Atmospheric_Condenser.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Gas")}/>
@@ -292,6 +403,27 @@ export default function Resources() {
                             {showPage === "Lab" && (
                                 <div>
                                     <h1 className="text-4xl mb-5">Chemistry Lab</h1>
+                                    <div className="flex flex-row flex-wrap gap-5">
+                                        {labResources.map((resource, index) => (
+                                            <div key={index} className="flex flex-col w-fit bg-gray-900 rounded-lg justify-start items-center cursor-pointer group h-fit">
+                                                <div className="flex flex-row gap-3 items-center w-full text-center justify-center rounded-lg bg-gray-800 p-3 group-hover:bg-sky-700 transition-colors duration-500">
+                                                    <img src={resource.icon} className="w-8 h-8"/>
+                                                    <p className="text-center text-4xl">{resource.name}</p>
+                                                </div>
+                                                
+                                                {
+                                                    resource.resources.map((compResource, rIndex) => (
+                                                        <div key={rIndex} className="flex flex-row gap-3 items-center justify-center p-3 w-full hover:bg-sky-900 transition-colors duration-500" onClick={() => setShowPage(compResource.page)}>
+                                                            <img src={compResource.icon} className="w-6 h-6"/>
+                                                            <p className="text-2xl">{compResource.name}</p>
+                                                        </div>
+                                                    ))
+                                                }
+
+                                            </div>
+                                        ))
+                                        }
+                                    </div>
                                 </div>
                             )}
                         </div>
