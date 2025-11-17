@@ -3,6 +3,13 @@ import { useState } from "react";
 
 export default function Resources() {
 
+    const popSound = typeof window !== "undefined" ? new Audio("./sounds/pop.mp3") : null;
+    function playPopSound() {
+        if (popSound === null) return;
+        popSound.currentTime = 0;
+        popSound.play();
+    }
+
     type NaturalResource = {
         name: string;
         icon: string;
@@ -320,7 +327,7 @@ export default function Resources() {
     const [showPage, setShowPage] = useState("Drill");
 
     return (
-        <div>
+        <div className="z-2">
             
             <div className={`absolute top-0 left-0 flex flex-col justify-center items-center ${showResourceMenu ? "h-full w-screen" : "opacity-0"} overflow-hidden`}>
                 <div className="bg-black/70 h-full w-full absolute top-0 left-0 cursor-pointer" onClick={() => setShowResourceMenu(false)}/>
@@ -331,13 +338,13 @@ export default function Resources() {
                 <div className="absolute left-[80%] top-[1%] w-[2%] h-[8%] bg-yellow-500 rounded-tr-full" />
                 <div className="absolute left-[42%] top-[1%] w-[38%] h-[4%] bg-yellow-500" />
                 <div className="absolute bg-gray-800 w-[80%] h-[80%] rounded-4xl overflow-hidden flex flex-col">
-                    <div className="bg-sky-600 w-full p-5 flex h-25 flex-row justify-between pr-10"><div>Resources</div><div className="cursor-pointer" onClick={() => setShowResourceMenu(false)}>X</div></div>
+                    <div className="bg-sky-600 w-full p-5 flex h-25 flex-row justify-between pr-10"><div>Resources</div><div className="cursor-pointer transition-transform duration-300 hover:scale-125 ease-in-out" onClick={() => {setShowResourceMenu(false); playPopSound()}}>X</div></div>
                     <div className="flex flex-row flex-1 overflow-hidden">
                         <div className="bg-gray-900 text-center flex flex-col justify-center items-center p-5 gap-3 overflow-y-auto">
-                            <img src="./icons/Icon_Drill.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Drill")}/>
-                            <img src="./icons/Icon_Atmospheric_Condenser.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Gas")}/>
-                            <img src="./icons/Icon_Smelting_Furnace.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Smelt")}/>
-                            <img src="./icons/Icon_Chemistry_Lab.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer" onClick={() => setShowPage("Lab")}/>
+                            <img src="./icons/Icon_Drill.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer transition-transform duration-300 hover:scale-110 ease-in-out" onClick={() => {setShowPage("Drill"); playPopSound()}}/>
+                            <img src="./icons/Icon_Atmospheric_Condenser.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer transition-transform duration-300 hover:scale-110 ease-in-out" onClick={() => {setShowPage("Gas"); playPopSound()}}/>
+                            <img src="./icons/Icon_Smelting_Furnace.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer transition-transform duration-300 hover:scale-110 ease-in-out" onClick={() => {setShowPage("Smelt"); playPopSound()}}/>
+                            <img src="./icons/Icon_Chemistry_Lab.png" className="w-16 mt-5 mb-5 mx-auto cursor-pointer transition-transform duration-300 hover:scale-110 ease-in-out" onClick={() => {setShowPage("Lab"); playPopSound()}}/>
                         </div>
                         <div className="flex-1 bg-gray-700 p-10 overflow-y-auto">
                             {showPage === "Drill" && (
@@ -345,7 +352,7 @@ export default function Resources() {
                                     <h1 className="text-4xl mb-5">Natural Resources</h1>
                                     <div className="flex flex-row flex-wrap gap-5">
                                         {naturalResources.map((resource, index) => (
-                                            <div key={index} className="flex flex-row gap-3 bg-gray-800 rounded-lg justify-center items-center p-3 cursor-pointer hover:bg-sky-700 transition-colors duration-500">
+                                            <div key={index} className="flex flex-row gap-3 bg-gray-800 rounded-lg justify-center items-center p-3 cursor-pointer hover:bg-sky-700 transition-colors duration-500 transition-transform duration-300 hover:scale-110 ease-in-out" onClick={() => playPopSound()}>
                                                 <img src={resource.icon} className="w-8 h-8"/>
                                                 <p className="text-center text-4xl">{resource.name}</p>
                                                 {resource.planetIcons ? 
@@ -370,7 +377,7 @@ export default function Resources() {
                                     <h1 className="text-4xl mb-5">Atmospheric Condenser</h1>
                                     <div className="flex flex-row flex-wrap gap-5">
                                         {gasses.map((gas, index) => (
-                                            <div key={index} className="flex flex-col bg-gray-900 rounded-lg justify-start items-center cursor-pointer group h-fit">
+                                            <div key={index} className="flex flex-col bg-gray-900 rounded-lg justify-start items-center cursor-pointer group h-fit transition-transform duration-300 hover:scale-110 ease-in-out" onClick={() => playPopSound()}>
                                                 <div className="flex flex-row gap-3 mb-3 items-center rounded-lg bg-gray-800 p-3 group-hover:bg-sky-700 transition-colors duration-500">
                                                     <img src={gas.icon} className="w-8 h-8"/>
                                                     <p className="text-center text-4xl">{gas.name}</p>
@@ -392,7 +399,7 @@ export default function Resources() {
                                     <h1 className="text-4xl mb-5">Smelting Furnace</h1>
                                     <div className="flex flex-row flex-wrap gap-5">
                                         {refinedResources.map((resource, index) => (
-                                            <div key={index} className="flex flex-col w-fit bg-gray-900 rounded-lg justify-start items-center cursor-pointer group h-fit">
+                                            <div key={index} className="flex flex-col w-fit bg-gray-900 rounded-lg justify-start items-center cursor-pointer group h-fit transition-transform duration-300 hover:scale-110 ease-in-out" onClick={() => playPopSound()}>
                                                 <div className="flex flex-row gap-3 items-center w-full text-center justify-center rounded-lg bg-gray-800 p-3 group-hover:bg-sky-700 transition-colors duration-500">
                                                     <img src={resource.icon} className="w-8 h-8"/>
                                                     <p className="text-center text-4xl">{resource.name}</p>
@@ -412,7 +419,7 @@ export default function Resources() {
                                     <h1 className="text-4xl mb-5">Chemistry Lab</h1>
                                     <div className="flex flex-row flex-wrap gap-5">
                                         {labResources.map((resource, index) => (
-                                            <div key={index} className="flex flex-col w-fit bg-gray-900 rounded-lg justify-start items-center cursor-pointer group h-fit">
+                                            <div key={index} className="flex flex-col w-fit bg-gray-900 rounded-lg justify-start items-center cursor-pointer group h-fit transition-transform duration-300 hover:scale-110 ease-in-out" onClick={() => playPopSound()}>
                                                 <div className="flex flex-row gap-3 items-center w-full text-center justify-center rounded-lg bg-gray-800 p-3 group-hover:bg-sky-700 transition-colors duration-500">
                                                     <img src={resource.icon} className="w-8 h-8"/>
                                                     <p className="text-center text-4xl">{resource.name}</p>
@@ -437,7 +444,7 @@ export default function Resources() {
                     </div>
                 </div>
             </div>
-            <img onClick={() => setShowResourceMenu(!showResourceMenu)} src="./icons/Icon_Auto_Extractor.png" className="absolute top-10 left-10 scale-125 cursor-pointer"/>
+            <img onClick={() => {setShowResourceMenu(!showResourceMenu); playPopSound()}} src="./icons/Icon_Auto_Extractor.png" className="absolute top-10 left-10 scale-125 cursor-pointer transition-transform duration-300 hover:scale-150 ease-in-out"/>
         </div>
     )
 }

@@ -3,6 +3,13 @@ import { useState } from "react";
 
 export default function PlanetCards() {
 
+    const popSound = typeof window !== "undefined" ? new Audio("./sounds/pop.mp3") : null;
+    function playPopSound() {
+        if (popSound === null) return;
+        popSound.currentTime = 0;
+        popSound.play();
+    }
+
     type PlanetCard = {
         name: string;
         image: string;
@@ -120,6 +127,7 @@ export default function PlanetCards() {
     const [selectedPlanetIndex, setSelectedPlanetIndex] = useState<number | null>(null);
 
     const handlePlanetCardClick = (index: number) => {
+        playPopSound();
         setSelectedPlanetIndex(prev => prev === index ? null : index);
     }
 
@@ -128,7 +136,7 @@ export default function PlanetCards() {
             { planetCards.map((planet, index) => (
                 <div key={index} onClick={() => handlePlanetCardClick(index)} 
                 className={`absolute w-65 h-90 rounded-2xl cursor-pointer bg-center bg-cover overflow-hidden group pointer-events-auto text-center origin-bottom-left -translate-x-[75%] transition-all duration-500 
-                    ${selectedPlanetIndex === index ? "z-20 scale-125 translate-y-0 rotate-0 " : "origin-bottom-left hover:-translate-y-5 hover:scale-105"}`}
+                    ${selectedPlanetIndex === index ? "z-1 scale-125 translate-y-0 rotate-0 " : "origin-bottom-left hover:-translate-y-5 hover:scale-105"}`}
                     style={{ 
                         backgroundImage: `url(${planet.image})`, 
                         rotate: selectedPlanetIndex === index ? "0deg" : `${-15 + index * 5}deg`,

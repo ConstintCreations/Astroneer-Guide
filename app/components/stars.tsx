@@ -2,6 +2,12 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function Stars() {
+    const popSound = typeof window !== "undefined" ? new Audio("./sounds/pop.mp3") : null;
+    function playPopSound() {
+        if (popSound === null) return;
+        popSound.currentTime = 0;
+        popSound.play();
+    }
 
     let brightnessLevels = {
         500: "bg-gray-500",
@@ -19,7 +25,7 @@ export default function Stars() {
     const [lastHoveredStar, setLastHoveredStar] = useState<number | null>(null);
 
     useEffect(() => {
-        const generatedStars: Star[] = Array.from({ length: 200 }).map((_, index) => ({
+        const generatedStars: Star[] = Array.from({ length: 300 }).map((_, index) => ({
             id: index,
             x: Math.random() * 96 + 2,
             y: Math.random() * 96 + 2,
@@ -31,6 +37,7 @@ export default function Stars() {
     }, []);
 
     const handleStarHover = (hoverId: number) => {
+        
         if (lastHoveredStar !== null && lastHoveredStar !== hoverId) {
             const lastStar = stars.find(star => star.id === lastHoveredStar)!;
             const currentStar = stars.find(star => star.id === hoverId)!;

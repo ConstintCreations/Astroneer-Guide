@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
-  output: "export",
-  basePath: "/Astroneer-Guide",
-  assetPrefix: "/Astroneer-Guide/",
-  images: {
-    unoptimized: true,
-  },
+  output: isProd ? 'export' : undefined,
+
+  ...(isProd && {
+    basePath: '/Astroneer-Guide',
+    assetPrefix: '/Astroneer-Guide/',
+  }),
 };
 
 module.exports = nextConfig;
