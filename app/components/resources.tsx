@@ -316,13 +316,20 @@ export default function Resources() {
         }
     ]
 
-    const [showResourceMenu, setShowResourceMenu] = useState(true);
-    const [showPage, setShowPage] = useState("Lab");
+    const [showResourceMenu, setShowResourceMenu] = useState(false);
+    const [showPage, setShowPage] = useState("Drill");
 
     return (
         <div>
+            
             <div className={`absolute top-0 left-0 flex flex-col justify-center items-center ${showResourceMenu ? "h-full w-screen" : "opacity-0"} overflow-hidden`}>
                 <div className="bg-black/70 h-full w-full absolute top-0 left-0 cursor-pointer" onClick={() => setShowResourceMenu(false)}/>
+                <div className="absolute left-[12.5%] top-[9%] w-[75%] h-[1%] bg-blue-700 rounded-tr-full" />
+                <div className="absolute left-[12.5%] top-[5%] w-[10%] h-[4%] bg-blue-700 rounded-t-4xl" />
+                <div className="absolute left-[14.5%] top-[2%] w-[6%] h-[3%] bg-green-500 rounded-t-full" />
+                <div className="absolute left-[40%] top-[1%] w-[2%] h-[8%] bg-yellow-500 rounded-tl-full" />
+                <div className="absolute left-[80%] top-[1%] w-[2%] h-[8%] bg-yellow-500 rounded-tr-full" />
+                <div className="absolute left-[42%] top-[1%] w-[38%] h-[4%] bg-yellow-500" />
                 <div className="absolute bg-gray-800 w-[80%] h-[80%] rounded-4xl overflow-hidden flex flex-col">
                     <div className="bg-sky-600 w-full p-5 flex h-25 flex-row justify-between pr-10"><div>Resources</div><div className="cursor-pointer" onClick={() => setShowResourceMenu(false)}>X</div></div>
                     <div className="flex flex-row flex-1 overflow-hidden">
