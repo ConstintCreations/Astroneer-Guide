@@ -95,7 +95,7 @@ export default function Resources() {
             planets: [
                 {planetIcon: "/icons/Icon_Sylva.png", ppu: "75"},
                 {planetIcon: "/icons/Icon_Calidor.png", ppu: "50"},
-                {planetIcon: "/icons/Icon_Vesania.png", ppu: "25"},
+                {planetIcon: "/icons/Icon_Vesania.png", ppu: "100"},
                 {planetIcon: "/icons/Icon_Novus.png", ppu: "25"}
             ]
         },
@@ -141,8 +141,72 @@ export default function Resources() {
         }
     ];
 
+    type refinedResource = {
+        name: string;
+        icon: string;
+        fromName: string;
+        fromIcon: string;
+    }
+
+    let refinedResources: refinedResource[] = [
+        {
+            name: "Carbon",
+            icon: "/icons/Icon_Carbon.png",
+            fromName: "Organic",
+            fromIcon: "/icons/Icon_Organic.png"
+        },
+        {
+            name: "Ceramic",
+            icon: "/icons/Icon_Ceramic.png",
+            fromName: "Clay",
+            fromIcon: "/icons/Icon_Clay.png"
+        },
+        {
+            name: "Glass",
+            icon: "/icons/Icon_Glass.png",
+            fromName: "Quartz",
+            fromIcon: "/icons/Icon_Quartz.png"
+        },
+        {
+            name: "Aluminum",
+            icon: "/icons/Icon_Aluminum.png",
+            fromName: "Laterite",
+            fromIcon: "/icons/Icon_Laterite.png"
+        },
+        {
+            name: "Zinc",
+            icon: "/icons/Icon_Zinc.png",
+            fromName: "Sphalerite",
+            fromIcon: "/icons/Icon_Sphalerite.png"
+        },
+        {
+            name: "Copper",
+            icon: "/icons/Icon_Copper.png",
+            fromName: "Malachite",
+            fromIcon: "/icons/Icon_Malachite.png"
+        },
+        {
+            name: "Tungsten",
+            icon: "/icons/Icon_Tungsten.png",
+            fromName: "Wolframite",
+            fromIcon: "/icons/Icon_Wolframite.png"
+        },
+        {
+            name: "Iron",
+            icon: "/icons/Icon_Iron.png",
+            fromName: "Hematite",
+            fromIcon: "/icons/Icon_Hematite.png"
+        },
+        {
+            name: "Titanium",
+            icon: "/icons/Icon_Titanium.png",
+            fromName: "Titanite",
+            fromIcon: "/icons/Icon_Titanite.png"
+        },
+    ]
+
     const [showResourceMenu, setShowResourceMenu] = useState(true);
-    const [showPage, setShowPage] = useState("Gas");
+    const [showPage, setShowPage] = useState("Smelt");
 
     return (
         <div>
@@ -208,6 +272,21 @@ export default function Resources() {
                             {showPage === "Smelt" && (
                                 <div>
                                     <h1 className="text-4xl mb-5">Smelting Furnace</h1>
+                                    <div className="flex flex-row flex-wrap gap-5">
+                                        {refinedResources.map((resource, index) => (
+                                            <div key={index} className="flex flex-col w-fit bg-gray-900 rounded-lg justify-start items-center cursor-pointer group h-fit">
+                                                <div className="flex flex-row gap-3 items-center w-full text-center justify-center rounded-lg bg-gray-800 p-3 group-hover:bg-sky-700 transition-colors duration-500">
+                                                    <img src={resource.icon} className="w-8 h-8"/>
+                                                    <p className="text-center text-4xl">{resource.name}</p>
+                                                </div>
+                                                <div className="flex flex-row gap-3 items-center justify-center p-3 w-full hover:bg-sky-900 transition-colors duration-500" onClick={() => setShowPage("Drill")}>
+                                                    <img src={resource.fromIcon} className="w-6 h-6"/>
+                                                    <p className="text-2xl">{resource.fromName}</p>
+                                                </div>
+                                            </div>
+                                        ))
+                                        }
+                                    </div>
                                 </div>
                             )}
                             {showPage === "Lab" && (
